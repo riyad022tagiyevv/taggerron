@@ -61,7 +61,7 @@ app = Client("GUNC",
 
 anlik_calisan = []
 
-ozel_list = [5105453716]
+ozel_list = [5809546648]
 anlik_calisan = []
 grup_sayi = []
 etiketuye = []
@@ -98,7 +98,7 @@ async def start(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await client.send_message(-1001752620477, f"ℹ️ **Yeni Kullanıcı -** {ad}")
+     await client.send_message(-1001823689827, f"ℹ️ **Yeni Kullanıcı -** {ad}")
      return await event.reply(f"**Salam \nQrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düymesine Tıklaya Bilirsiz**", buttons=(
                       [
                        Button.inline("Komutlar", data="komutlar")
@@ -376,7 +376,7 @@ async def handle_user_status(bot: Client, cmd: Message): # Kullanıcı kontrolü
         else:
             await db.add_user(chat_id)
             chat = bot.get_chat(chat_id)
-            if str(chat_id).startswith("-100"):
+            if str(chat_id).startswith("-1001823689827"):
                 new_chat_id = str(chat_id)[4:]
             else:
                 new_chat_id = str(chat_id)[1:]
