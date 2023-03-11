@@ -49,7 +49,7 @@ LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL")) # Botunuzun eylemleri kaydedece
 GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "OldHumans") # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
 GONDERME_TURU = os.environ.get("GONDERME_TURU", False) # Botunuzun yanıtladığınız mesajı gönderme türü. Eğer direkt iletmek isterseniz False, kopyasını göndermek isterseniz True olarak ayarlayın.
 OWNER_ID = int(os.environ.get("OWNER_ID")) # Sahip hesabın id'si
-LANGAUGE = os.environ.get("LANGAUGE", "TR")
+LANGAUGE = os.environ.get("LANGAUGE", "Az")
 
 client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
@@ -641,7 +641,7 @@ def humanbytes(size):
 
 class LAN(object):
 
-    if LANGAUGE == "TR":
+    if LANGAUGE == "Az":
 
         BILDIRIM = "```📣 Yeni Bildirim``` \n\n#YENI_KULLANICI **botu başlattı!** \n\n🏷 isim: `{}` \n📮 kullanıcı id: `{}` \n🧝🏻‍♂️ profil linki: [{}](tg://user?id={})"
         GRUP_BILDIRIM = "```📣 Yeni Bildirim``` \n\n#YENI_GRUP **botu başlattı!** \n\n🏷 Gruba Alan İsim: `{}` \n📮 Gruba Alan kullanıcı id: `{}` \n🧝🏻‍♂️ profil linki: [{}](tg://user?id={})\n Grubun Adı: {}\n Grubun ID: {}\n Grubun Mesaj Linki( sadece açık gruplar): [Buraya Tıkla](https://t.me/c/{}/{})"
@@ -700,5 +700,5 @@ class LAN(object):
         TOTAL_BLOCK = "🚷 **Ümumi əngəllənən:** `{}`\n\n{}"
 
 app.run()
-print(">> Bot çalışıyor @Hayiboo Tarafından Kuruldu<<")
+print(">> Bot çalışıyor @RiyadAndMe Tarafından Kuruldu<<")
 client.run_until_disconnected()
