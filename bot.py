@@ -46,7 +46,7 @@ bot_token = os.environ.get("TOKEN")
 DATABASE_URL = os.environ.get("DATABASE_URL") # MongoDB veritabanınızın url'si. Nasıl alacağınızı bilmiyorsanız destek grubu @RepoHaneX'e gelin.
 BOT_USERNAME = os.environ.get("BOT_USERNAME") # Botunuzun kullanıcı adı.
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL")) # Botunuzun eylemleri kaydedeceği kayıt grubunun id'si.
-GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "SohbetGoVip") # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
+GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "OldHumans") # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
 GONDERME_TURU = os.environ.get("GONDERME_TURU", False) # Botunuzun yanıtladığınız mesajı gönderme türü. Eğer direkt iletmek isterseniz False, kopyasını göndermek isterseniz True olarak ayarlayın.
 OWNER_ID = int(os.environ.get("OWNER_ID")) # Sahip hesabın id'si
 LANGAUGE = os.environ.get("LANGAUGE", "TR")
@@ -71,14 +71,14 @@ rxyzdev_initT = {}
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def info(event):
-  await event.reply("**Merhaba Benim Ve Sahibim Hakkında Bilgi\n\nPython: 3.8.2\nKütüphanem: Telethon\n\nSahibim: @hi Gruplarınızda Üyeleri Etiketlemek için Yaratılmışım**",
+  await event.reply("**Salam Menim Ve Sahibim Haqqında Melumat\n\nPython: 3.8.2\nKütüphanem: Telethon\n\nSahibim: @RiyadAndMe Qruplarınızda Üyeleri Etiketlemek için Yaradılmışam**",
                     buttons=(
                       [
-                       Button.url('Beni Grubuna Ekle ➕', 'https://t.me/Startaggerbot?startgroup=a'),
-                       Button.url('Kanal 📣', 'https://t.me/StarBotKanal')
+                       Button.url('Meni Qrubuna At ➕', 'https://t.me/ModernTaggerbot?startgroup=a'),
+                       Button.url('Kanal 📣', 'https://t.me/NewModernBlog')
                       ],
                       [
-                       Button.url('Sahibim 🖥️', 'https://t.me/Hayiboo')
+                       Button.url('Sahibim 🖥️', 'https://t.me/RiyadAndMe')
                       ],
                     ),
                     link_preview=False
@@ -99,39 +99,39 @@ async def start(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await client.send_message(-1001752620477, f"ℹ️ **Yeni Kullanıcı -** {ad}")
-     return await event.reply(f"**Merhaba \nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
+     return await event.reply(f"**Salam \nQrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düymesine Tıklaya Bilirsiz**", buttons=(
                       [
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
+                       Button.url('Meni Qrubuna At', 'https://t.me/ModernTaggerBot?startgroup=a'),
+                       Button.url('Kanal', 'https://t.me/NewModernBlog')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('Sahibim', 'https://t.me/RiyadAndMe')
                       ],
                     ),
                     link_preview=False)
 
 
   if event.is_group:
-    return await client.send_message(event.chat_id, f"**Beni Grubuna Aldığın için Teşekkürler ✨**")
+    return await client.send_message(event.chat_id, f"**Meni Qrubuna Aldığın üçün Teşekkürler ✨**")
 
 # Başlanğıc Button
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"**Merhaba Ben @MinaTagBot\nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
+     await event.edit(f"**Salam Men @ModernTaggerBot\nQrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düymesine Tıklaya Bilirsiz**", buttons=(
                       [
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
+                       Button.url('Meni Qrubuna At', 'https://t.me/ModernTaggerBot?startgroup=a'),
+                       Button.url('Kanal', 'https://t.me/NewModernBlog')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('Sahibim', 'https://t.me/RiyadAndMe')
                       ],
                     ),
                     link_preview=False)
@@ -161,7 +161,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**Bu Komut Sadace Grublarda ve Kanallarda Kullanıma Bilir**")
+    return await event.respond("**Bu Komut Sadace Qrublarda ve Kanallarda Kullanıma Bilir**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -683,7 +683,7 @@ class LAN(object):
         BROADCAST_STARTED = "```📤 BroadCast başladıldı! Bitəndə mesaj alacaqsınız."
         BROADCAST_STOPPED = "✅ ```Broadcast uğurla tamamlandı.``` \n\n**Bu qədər vaxtda tamamlandı** `{}` \n\n**Ümumi istifadəçilər:** `{}` \n\n**Ümumi göndərmə cəhdləri:** `{}` \n\n**Uğurla göndərilən:** `{}` \n\n**Ümumi xəta:** `{}`"
         STATS_STARTED = "{} **Zəhmət olmasa gözləyin, bilgiləri gətirirəm!**"
-        STATS = """**@{} Məlumatları**\n\n**İstifadəçiləri;**\n» **Ümumi söhbətlər:** `{}`\n» **Ümumi qruplar: `{}`\n» **Ümumi PM's: `{}`\n\n**Disk İstifadəsi;**\n» **Disk'in Sahəsi:** `{}`\n» **İstifadə edilən:** `{}({}%)`\n» **Boş qalan:** `{}`\n\n**🎛 Ən yüksək istifadə dəyərləri;**\n» **CPU:** `{}%`\n» **RAM:** `{}%`\n**Versiyalar;**\n» **Pyrogram:** {}\n\n\n__• By @MinaTagBot__"""
+        STATS = """**@{} Məlumatları**\n\n**İstifadəçiləri;**\n» **Ümumi söhbətlər:** `{}`\n» **Ümumi qruplar: `{}`\n» **Ümumi PM's: `{}`\n\n**Disk İstifadəsi;**\n» **Disk'in Sahəsi:** `{}`\n» **İstifadə edilən:** `{}({}%)`\n» **Boş qalan:** `{}`\n\n**🎛 Ən yüksək istifadə dəyərləri;**\n» **CPU:** `{}%`\n» **RAM:** `{}%`\n**Versiyalar;**\n» **Pyrogram:** {}\n\n\n__• By @ModernTaggerBot__"""
         BAN_REASON = "Bu sebep yasaklandığınız için @{} tarafından otomatik olarak oluşturulmuştur"
         NEED_USER = "**Zəhmət olmasa istifadəçi id'si verin.**"
         BANNED_GROUP = "🚷 **Qadağan olundu!\n\nQadağan edən:** {}\n**Qrup ID:** `{}` \n**Vaxt:** `{}` \n**Səbəb:** `{}`"
